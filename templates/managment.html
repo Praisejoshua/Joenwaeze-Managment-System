@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Management
+{% endblock %}
+{% load static %}
+
+{% block content %}
+
+{% load humanize %}
+
+<!-- Include CSS for styling -->
+<link rel="stylesheet" href="{% static 'm.css' %}">
+
+
+<div class="management-container my-5 mx-auto">
+    <h2 class="text-center mb-4">Joenwaeze Management System</h2>
+
+    <!-- Table to display existing management entries -->
+    <table class="management-table">
+        <thead class="table-header">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Weight (KG)</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for managment in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ managment.seller_name }}</td>
+            <td>{{ managment.Weight }} KG</td>
+            <td>{{ managment.amount|intcomma }}</td>  <!-- Format numbers with commas -->
+            <td>{{ managment.date|date:"F d, Y" }}</td>
+            <td>
+                <!-- Edit Button -->
+                <a href="{% url 'managment_update' managment.id %}" class="action-btn edit-btn">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+                <!-- Delete Button -->
+                <a href="{% url 'managment_delete' managment.id %}" class="action-btn delete-btn">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Form to add new management entry -->
+    <form method="POST" class="management-form">
+        {% csrf_token %}
+        <table class="management-table">
+            <tr>
+                <td>#</td>
+                <td>{{ form.seller_name }}</td>
+                <td>{{ form.Weight }}</td>
+                <td>{{ form.amount }}</td>
+                <td>{{ form.date }}</td>
+                <td>
+                    <button type="submit" class="add-entry-btn">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{% endblock %}

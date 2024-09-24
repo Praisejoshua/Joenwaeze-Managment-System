@@ -1,0 +1,80 @@
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .confirm-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .confirm-card {
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .confirm-header h2 {
+        margin: 0;
+        padding: 10px 0;
+        font-size: 24px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .confirm-body h5 {
+        margin: 20px 0;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Button Styles */
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+
+    .btn-cancel {
+        background-color: #6c757d;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-cancel:hover {
+        background-color: #5a6268;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .confirm-container {
+            padding-top: 5rem;
+        }
+
+        .btn-delete, .btn-cancel {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+    }

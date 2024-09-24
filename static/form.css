@@ -1,0 +1,90 @@
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .edit-management-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+
+    .edit-management-card {
+        background-color: white;
+        width: 100%;
+        max-width: 700px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .edit-management-body {
+        padding: 20px;
+    }
+
+    .edit-management-title {
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Form Styles */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-errors {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    /* Button Styles */
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .btn-update, .btn-cancel {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+    }
+
+    .btn-update {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-update:hover {
+        background-color: #218838;
+    }
+
+    .btn-cancel {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn-cancel:hover {
+        background-color: #5a6268;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .edit-management-card {
+            max-width: 100%;
+        }
+
+        .btn-update, .btn-cancel {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+    }
